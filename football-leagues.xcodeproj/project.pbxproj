@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		02CDD489A37619E2269DD8F5 /* Pods_football_leagues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3324CFB57C49E34C9155B688 /* Pods_football_leagues.framework */; };
-		1F8957662AC9870F00C91B9A /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8957652AC9870F00C91B9A /* FirstView.xib */; };
+		1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */; };
+		1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */; };
 		1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */; };
 		1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */; };
-		1FA7AA3F2AC9515C00895E27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3E2AC9515C00895E27 /* ViewController.swift */; };
 		1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */; };
 		1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7AA462AC9516B00895E27 /* Assets.xcassets */; };
 		1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F8957652AC9870F00C91B9A /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
+		1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
+		1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
 		1FA7AA372AC9515C00895E27 /* football-leagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "football-leagues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1FA7AA3E2AC9515C00895E27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FA7AA442AC9515C00895E27 /* football_leagues.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = football_leagues.xcdatamodel; sourceTree = "<group>"; };
 		1FA7AA462AC9516B00895E27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA7AA492AC9516B00895E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,12 +67,12 @@
 			children = (
 				1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */,
 				1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */,
-				1FA7AA3E2AC9515C00895E27 /* ViewController.swift */,
-				1F8957652AC9870F00C91B9A /* FirstView.xib */,
 				1FA7AA462AC9516B00895E27 /* Assets.xcassets */,
 				1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */,
 				1FA7AA4B2AC9516B00895E27 /* Info.plist */,
 				1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */,
+				1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */,
+				1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */,
 			);
 			path = "football-leagues";
 			sourceTree = "<group>";
@@ -155,8 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */,
-				1F8957662AC9870F00C91B9A /* FirstView.xib in Resources */,
 				1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */,
+				1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA7AA3F2AC9515C00895E27 /* ViewController.swift in Sources */,
+				1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */,
 				1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */,
 				1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */,
 				1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */,
@@ -359,7 +359,7 @@
 				INFOPLIST_FILE = "football-leagues/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -371,7 +371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +388,7 @@
 				INFOPLIST_FILE = "football-leagues/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -400,7 +400,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

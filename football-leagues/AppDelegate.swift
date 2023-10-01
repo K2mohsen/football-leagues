@@ -8,13 +8,23 @@
 import UIKit
 import CoreData
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Create an instance of your view controller from the XIB file
+        let initialVC = CompetitionsViewController(nibName: "CompetitionsViewController", bundle: nil)
+        
+        // Create a UIWindow and set the initial view controller as its root view controller
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = initialVC
+        // make window visible
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
