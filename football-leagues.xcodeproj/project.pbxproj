@@ -12,6 +12,7 @@
 		1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */; };
 		1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */; };
 		1F8957712ACC2BBC00C91B9A /* competitionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F89576F2ACC2BBC00C91B9A /* competitionsTableViewCell.xib */; };
+		1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */; };
 		1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */; };
 		1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */; };
 		1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 		1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
 		1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = competitionsTableViewCell.swift; sourceTree = "<group>"; };
 		1F89576F2ACC2BBC00C91B9A /* competitionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = competitionsTableViewCell.xib; sourceTree = "<group>"; };
+		1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsModel.swift; sourceTree = "<group>"; };
 		1FA7AA372AC9515C00895E27 /* football-leagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "football-leagues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		1F89576B2ACB0E0F00C91B9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */,
+				1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */,
 				1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */,
 				1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */,
 				1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */,
