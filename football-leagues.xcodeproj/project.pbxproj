@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02CDD489A37619E2269DD8F5 /* Pods_football_leagues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3324CFB57C49E34C9155B688 /* Pods_football_leagues.framework */; };
+		1F7BFC1F2AD2C09D009BC842 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7BFC1E2AD2C09D009BC842 /* NetworkManager.swift */; };
 		1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */; };
 		1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */; };
 		1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F7BFC1E2AD2C09D009BC842 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
 		1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
 		1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = competitionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F7BFC1D2AD2BF8C009BC842 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1F7BFC1E2AD2C09D009BC842 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		1F89576B2ACB0E0F00C91B9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 			children = (
 				1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */,
 				1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */,
+				1F7BFC1D2AD2BF8C009BC842 /* Networking */,
 				1F89576B2ACB0E0F00C91B9A /* Model */,
 				1F89576D2ACB0ECF00C91B9A /* CompetitionsViewModel */,
 				1F89576C2ACB0E4D00C91B9A /* View */,
@@ -246,6 +257,7 @@
 				1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */,
 				1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */,
 				1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */,
+				1F7BFC1F2AD2C09D009BC842 /* NetworkManager.swift in Sources */,
 				1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */,
 				1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */,
 				1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */,
