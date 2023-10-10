@@ -13,6 +13,7 @@ class CompetitionsViewController: UIViewController {
         super.viewDidLoad()
 
         
+        
     }
 
 }
