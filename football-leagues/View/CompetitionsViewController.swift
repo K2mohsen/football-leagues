@@ -12,8 +12,7 @@ class CompetitionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+    
     }
 
 }
