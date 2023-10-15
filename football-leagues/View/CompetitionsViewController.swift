@@ -8,11 +8,17 @@
 import UIKit
 
 class CompetitionsViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+     private let competitionsVM = CompetitionsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
+        competitionsVM.successClouser = {
+            // relode data 
+        }
+        
+        competitionsVM.errorClouser = { error in
+        }
     }
-
 }
+

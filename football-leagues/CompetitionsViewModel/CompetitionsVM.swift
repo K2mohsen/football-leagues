@@ -1,9 +1,4 @@
-//
-//  CompetitionsVM.swift
-//  football-leagues
-//
-//  Created by Innovitics on 10/10/2023.
-//
+
 
 import Foundation
 
@@ -12,13 +7,18 @@ class CompetitionsViewModel{
     
     let apiService = APIService.shared
     var competitions : [Competition] = []
-    
-    func getcompetitions(completion : @escaping () -> Void ){
-        apiService.fetchCompetitions { competitions in
-            if let competitions = competitions {
-                self.competitions = competitions
+    var successClouser: (() -> ())?
+    var errorClouser: ((String) -> ())?
+    func getcompetitions(){
+        apiService.fetchCompetitions { competitions, error in
+            if let error = error {
+                //fire error closure
+                self.errorClouser?(error)
+            }else{
+                self.competitions = competitions ?? []
+                // fire sucess closure
+                self.successClouser?()
             }
-            completion()
         }
     }
 }
