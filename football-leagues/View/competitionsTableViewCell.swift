@@ -7,7 +7,7 @@
 
 import UIKit
 
-class competitionsTableViewCell: UITableViewCell {
+class CompetitionsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
