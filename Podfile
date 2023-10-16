@@ -8,5 +8,6 @@ target 'football-leagues' do
   # Pods for football-leagues
 pod 'Alamofire'
 pod 'SDWebImage', '~> 5.0'
+pod 'SDWebImageSVGCoder'
 
 end

@@ -1,14 +1,15 @@
-//
-//  competitionsTableViewCell.swift
-//  football-leagues
-//
-//  Created by Innovitics on 03/10/2023.
-//
 
 import UIKit
 
 class CompetitionsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var competitionImage: UIImageView!
+    @IBOutlet weak var competitionNameLabel: UILabel!
+    @IBOutlet weak var areaFlagImage: UIImageView!
+    @IBOutlet weak var areaName: UILabel!
+    @IBOutlet weak var competitionTypeImage: UIImageView!
+    @IBOutlet weak var competionTypeName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10

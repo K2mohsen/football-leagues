@@ -12,8 +12,8 @@
 		1F7BFC1F2AD2C09D009BC842 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7BFC1E2AD2C09D009BC842 /* NetworkManager.swift */; };
 		1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */; };
 		1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */; };
-		1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */; };
-		1F8957712ACC2BBC00C91B9A /* competitionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F89576F2ACC2BBC00C91B9A /* competitionsTableViewCell.xib */; };
+		1F8957702ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */; };
+		1F8957712ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */; };
 		1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */; };
 		1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */; };
 		1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */; };
@@ -27,8 +27,8 @@
 		1F7BFC1E2AD2C09D009BC842 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
 		1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsViewController.xib; sourceTree = "<group>"; };
-		1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = competitionsTableViewCell.swift; sourceTree = "<group>"; };
-		1F89576F2ACC2BBC00C91B9A /* competitionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = competitionsTableViewCell.xib; sourceTree = "<group>"; };
+		1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsTableViewCell.swift; sourceTree = "<group>"; };
+		1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsTableViewCell.xib; sourceTree = "<group>"; };
 		1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsModel.swift; sourceTree = "<group>"; };
 		1FA7AA372AC9515C00895E27 /* football-leagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "football-leagues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 			children = (
 				1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */,
 				1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */,
-				1F89576E2ACC2BBC00C91B9A /* competitionsTableViewCell.swift */,
-				1F89576F2ACC2BBC00C91B9A /* competitionsTableViewCell.xib */,
+				1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */,
+				1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 				1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */,
 				1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */,
 				1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */,
-				1F8957712ACC2BBC00C91B9A /* competitionsTableViewCell.xib in Resources */,
+				1F8957712ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F2E86862AD549790045D35F /* CompetitionsVM.swift in Sources */,
-				1F8957702ACC2BBC00C91B9A /* competitionsTableViewCell.swift in Sources */,
+				1F8957702ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift in Sources */,
 				1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */,
 				1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */,
 				1F7BFC1F2AD2C09D009BC842 /* NetworkManager.swift in Sources */,

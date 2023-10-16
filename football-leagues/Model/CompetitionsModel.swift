@@ -18,7 +18,7 @@ struct Competition: Codable {
     let plan: Plan?
     let currentSeason: CurrentSeason?
     let numberOfAvailableSeasons: Int?
-    let lastUpdated: Date?
+    let lastUpdated: String?
 }
 
 // MARK: - Area
