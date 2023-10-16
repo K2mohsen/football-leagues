@@ -10,15 +10,14 @@ class APIService{
     private init () {}
     
     func fetchCompetitions(completion: @escaping ([Competition]?, String?) -> Void) {
-        let url = "http://api.football-data.org/v2/competitions"
+        let url = "http://api.football-data.org/v4/competitions"
         let request = AF.request(url)
         request.responseDecodable(of: [Competition].self) { response in
             switch response.result {
             case .success(let competitions):
                 completion(competitions, nil)
-                print(competitions)
             case .failure(let error) :
-                print("error fetching data :\(error)")
+               // print("error fetching data :\(error)")
                 completion(nil, error.errorDescription)
             }
         }
