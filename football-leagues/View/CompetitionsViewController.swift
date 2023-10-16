@@ -1,5 +1,8 @@
 
 import UIKit
+import SDWebImage
+import SDWebImageSVGCoder
+
 
 class CompetitionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -7,11 +10,13 @@ class CompetitionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(UINib.init(nibName: "competitionsCell", bundle: nil), forCellReuseIdentifier: "competitionsCell")
+        let tableViewInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        tableView.contentInset = tableViewInsets
+        tableView.register(UINib.init(nibName: "CompetitionsTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitionsCell")
         
         tableView.delegate = self
         tableView.dataSource = self
+        
         competitionsVM.successClouser = {
             self.tableView.reloadData()
         }
@@ -21,6 +26,7 @@ class CompetitionsViewController: UIViewController {
         }
         competitionsVM.getcompetitions()
     }
+    // create error alert
     func showError(_ errorMessage : String){
         let alertController = UIAlertController(title: "error", message: errorMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -35,15 +41,42 @@ extension CompetitionsViewController : UITableViewDataSource {
         competitionsVM.competitions.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "competitionsCell", for: indexPath) as! CompetitionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CompetitionsCell", for: indexPath) as! CompetitionsTableViewCell
         let competition = competitionsVM.competitions[indexPath.row]
+        
+        if let competitionImage = URL(string: competition.emblem ?? "Empty URL string"){
+            let svgCoder = SDImageSVGCoder.shared
+            SDImageCodersManager.shared.addCoder(svgCoder)
+            cell.competitionImage.sd_setImage(with: competitionImage, placeholderImage: UIImage(named: "Copa"))
+        }
+        if let competitionName = competition.name{
+            cell.competitionNameLabel.text = competitionName
+        }
+        if let areaFlagImage = URL(string: competition.area?.flag ?? "Empty URL string"){
+            let svgCoder = SDImageSVGCoder.shared
+            SDImageCodersManager.shared.addCoder(svgCoder)
+            cell.areaFlagImage.sd_setImage(with: areaFlagImage, placeholderImage: UIImage(named: "copa_flag"))
+        }
+        if let areaName = competition.area?.name{
+            cell.areaName.text = areaName
+        }
+        if let compType = competition.type{
+            switch compType {
+            case .cup:
+                cell.competitionTypeImage.image = UIImage(named: "cup_image")
+                cell.competionTypeName.text = "cup"
+            case .league:
+                cell.competitionTypeImage.image = UIImage(named: "league_image")
+                cell.competionTypeName.text = "League"
+            }
+        }
         return cell
     }
 }
 //MARK: - tableViewDelegate
 extension CompetitionsViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let competitionId = competitionsVM.competitions[indexPath.row].id
+      //  let competitionId = competitionsVM.competitions[indexPath.row].id
     }
     
     
