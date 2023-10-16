@@ -12,31 +12,20 @@ struct Welcome: Codable {
 struct Competition: Codable {
     let id: Int?
     let area: Area?
-    let name: String?
-    let code: String?
-    let emblemURL: String?
+    let name, code: String?
+    let type: TypeEnum?
+    let emblem: String?
     let plan: Plan?
     let currentSeason: CurrentSeason?
     let numberOfAvailableSeasons: Int?
     let lastUpdated: Date?
-
-    enum CodingKeys: String, CodingKey {
-        case id, area, name, code
-        case emblemURL = "emblemUrl"
-        case plan, currentSeason, numberOfAvailableSeasons, lastUpdated
-    }
 }
 
 // MARK: - Area
 struct Area: Codable {
     let id: Int?
-    let name, countryCode: String?
-    let ensignURL: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id, name, countryCode
-        case ensignURL = "ensignUrl"
-    }
+    let name, code: String?
+    let flag: String?
 }
 
 // MARK: - CurrentSeason
@@ -44,30 +33,18 @@ struct CurrentSeason: Codable {
     let id: Int?
     let startDate, endDate: String?
     let currentMatchday: Int?
-    let winner: Winner?
-}
-
-// MARK: - Winner
-struct Winner: Codable {
-    let id: Int?
-    let name: String?
-    let shortName, tla: String?
-    let crestURL: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id, name, shortName, tla
-        case crestURL = "crestUrl"
-    }
 }
 
 enum Plan: String, Codable {
-    case tierFour = "TIER_FOUR"
     case tierOne = "TIER_ONE"
-    case tierThree = "TIER_THREE"
-    case tierTwo = "TIER_TWO"
+}
+
+enum TypeEnum: String, Codable {
+    case cup = "CUP"
+    case league = "LEAGUE"
 }
 
 // MARK: - Filters
 struct Filters: Codable {
+    let client: String?
 }
-
