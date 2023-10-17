@@ -17,7 +17,7 @@ class APIService{
             "X-Auth-Token": apiKey
         ]
         let request = AF.request(url, method: .get, headers: headers)
-        request.responseDecodable(of: Welcome.self) { response in
+        request.responseDecodable(of: Competitions.self) { response in
             switch response.result {
             case .success(let response):
                 completion(response.competitions, nil)
