@@ -16,6 +16,8 @@
 		1F8957712ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */; };
 		1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */; };
 		1F99689C2ADE8F3E000DDA94 /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F99689B2ADE8F3E000DDA94 /* TeamsModel.swift */; };
+		1F99689F2ADEAE28000DDA94 /* TeamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F99689D2ADEAE28000DDA94 /* TeamsCell.swift */; };
+		1F9968A02ADEAE28000DDA94 /* TeamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F99689E2ADEAE28000DDA94 /* TeamsCell.xib */; };
 		1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */; };
 		1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */; };
 		1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */; };
@@ -32,6 +34,8 @@
 		1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompetitionsTableViewCell.xib; sourceTree = "<group>"; };
 		1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsModel.swift; sourceTree = "<group>"; };
 		1F99689B2ADE8F3E000DDA94 /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
+		1F99689D2ADEAE28000DDA94 /* TeamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCell.swift; sourceTree = "<group>"; };
+		1F99689E2ADEAE28000DDA94 /* TeamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsCell.xib; sourceTree = "<group>"; };
 		1FA7AA372AC9515C00895E27 /* football-leagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "football-leagues.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +80,6 @@
 		1F89576C2ACB0E4D00C91B9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F9968962ADE80B0000DDA94 /* Cells */,
 				1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */,
 				1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */,
 			);
@@ -96,6 +99,8 @@
 			children = (
 				1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */,
 				1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */,
+				1F99689D2ADEAE28000DDA94 /* TeamsCell.swift */,
+				1F99689E2ADEAE28000DDA94 /* TeamsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				1F7BFC1D2AD2BF8C009BC842 /* Networking */,
 				1F89576B2ACB0E0F00C91B9A /* Models */,
 				1F89576D2ACB0ECF00C91B9A /* ViewModels */,
+				1F9968962ADE80B0000DDA94 /* Cells */,
 				1F89576C2ACB0E4D00C91B9A /* Views */,
 				1FA7AA462AC9516B00895E27 /* Assets.xcassets */,
 				1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9968A02ADEAE28000DDA94 /* TeamsCell.xib in Resources */,
 				1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */,
 				1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */,
 				1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */,
@@ -270,6 +277,7 @@
 			files = (
 				1F2E86862AD549790045D35F /* CompetitionsVM.swift in Sources */,
 				1F8957702ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift in Sources */,
+				1F99689F2ADEAE28000DDA94 /* TeamsCell.swift in Sources */,
 				1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */,
 				1F8957692AC98D3700C91B9A /* CompetitionsViewController.swift in Sources */,
 				1F7BFC1F2AD2C09D009BC842 /* NetworkManager.swift in Sources */,
