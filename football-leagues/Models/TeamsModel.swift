@@ -27,12 +27,10 @@ struct Coach: Codable {
     let nationality: String?
     let contract: Contract?
 }
-
 // MARK: - Contract
 struct Contract: Codable {
     let start, until: String?
 }
-
 // MARK: - Squad
 struct Squad: Codable {
     let id: Int?

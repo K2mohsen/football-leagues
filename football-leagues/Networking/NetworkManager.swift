@@ -26,9 +26,7 @@ class APIService{
                 completion(nil, error.errorDescription)
             }
         }
-            
     }
-        
 }
 
 
