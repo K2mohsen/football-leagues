@@ -10,6 +10,7 @@ class CompetitionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let tableViewInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.contentInset = tableViewInsets
         tableView.register(UINib.init(nibName: "CompetitionsTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitionsCell")
@@ -20,7 +21,6 @@ class CompetitionsViewController: UIViewController {
         competitionsVM.successClouser = {
             self.tableView.reloadData()
         }
-        
         competitionsVM.errorClouser = { error in
             self.showError(error)
         }
@@ -44,7 +44,7 @@ extension CompetitionsViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompetitionsCell", for: indexPath) as! CompetitionsTableViewCell
         let competition = competitionsVM.competitions[indexPath.row]
         
-        if let competitionImage = URL(string: competition.emblem ?? "Empty URL string"){
+        if let competitionImage = URL(string: competition.emblem ?? "Empty_URL_string"){
             let svgCoder = SDImageSVGCoder.shared
             SDImageCodersManager.shared.addCoder(svgCoder)
             cell.competitionImage.sd_setImage(with: competitionImage, placeholderImage: UIImage(named: "Copa"))
@@ -52,7 +52,7 @@ extension CompetitionsViewController : UITableViewDataSource {
         if let competitionName = competition.name{
             cell.competitionNameLabel.text = competitionName
         }
-        if let areaFlagImage = URL(string: competition.area?.flag ?? "Empty URL string"){
+        if let areaFlagImage = URL(string: competition.area?.flag ?? "Empty_URL_string"){
             let svgCoder = SDImageSVGCoder.shared
             SDImageCodersManager.shared.addCoder(svgCoder)
             cell.areaFlagImage.sd_setImage(with: areaFlagImage, placeholderImage: UIImage(named: "copa_flag"))

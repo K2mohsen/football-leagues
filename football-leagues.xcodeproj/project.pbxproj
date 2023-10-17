@@ -62,31 +62,39 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		1F89576B2ACB0E0F00C91B9A /* Model */ = {
+		1F89576B2ACB0E0F00C91B9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		1F89576C2ACB0E4D00C91B9A /* View */ = {
+		1F89576C2ACB0E4D00C91B9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F9968962ADE80B0000DDA94 /* Cells */,
 				1F8957682AC98D3700C91B9A /* CompetitionsViewController.xib */,
 				1F8957672AC98D3700C91B9A /* CompetitionsViewController.swift */,
-				1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */,
-				1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		1F89576D2ACB0ECF00C91B9A /* CompetitionsViewModel */ = {
+		1F89576D2ACB0ECF00C91B9A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				1F2E86852AD549790045D35F /* CompetitionsVM.swift */,
 			);
-			path = CompetitionsViewModel;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1F9968962ADE80B0000DDA94 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F89576F2ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib */,
+				1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1FA7AA2E2AC9515C00895E27 = {
@@ -113,9 +121,9 @@
 				1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */,
 				1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */,
 				1F7BFC1D2AD2BF8C009BC842 /* Networking */,
-				1F89576B2ACB0E0F00C91B9A /* Model */,
-				1F89576D2ACB0ECF00C91B9A /* CompetitionsViewModel */,
-				1F89576C2ACB0E4D00C91B9A /* View */,
+				1F89576B2ACB0E0F00C91B9A /* Models */,
+				1F89576D2ACB0ECF00C91B9A /* ViewModels */,
+				1F89576C2ACB0E4D00C91B9A /* Views */,
 				1FA7AA462AC9516B00895E27 /* Assets.xcassets */,
 				1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */,
 				1FA7AA4B2AC9516B00895E27 /* Info.plist */,
