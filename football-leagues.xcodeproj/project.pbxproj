@@ -25,6 +25,7 @@
 		1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */; };
 		1FC4E9222ADFD74800A6846E /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9202ADFD74800A6846E /* TeamsVC.swift */; };
 		1FC4E9232ADFD74800A6846E /* TeamsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC4E9212ADFD74800A6846E /* TeamsVC.xib */; };
+		1FC4E9262ADFEF5700A6846E /* TeamsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		1FA7AA4B2AC9516B00895E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FC4E9202ADFD74800A6846E /* TeamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
 		1FC4E9212ADFD74800A6846E /* TeamsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsVC.xib; sourceTree = "<group>"; };
+		1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVM.swift; sourceTree = "<group>"; };
 		2CD5FB552AC2DA1C1045817A /* Pods-football-leagues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-football-leagues.debug.xcconfig"; path = "Target Support Files/Pods-football-leagues/Pods-football-leagues.debug.xcconfig"; sourceTree = "<group>"; };
 		3324CFB57C49E34C9155B688 /* Pods_football_leagues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_football_leagues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB338CE7203BAC263FB4137 /* Pods-football-leagues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-football-leagues.release.xcconfig"; path = "Target Support Files/Pods-football-leagues/Pods-football-leagues.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1F2E86852AD549790045D35F /* CompetitionsVM.swift */,
+				1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F2E86862AD549790045D35F /* CompetitionsVM.swift in Sources */,
+				1FC4E9262ADFEF5700A6846E /* TeamsVM.swift in Sources */,
 				1F8957702ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift in Sources */,
 				1F99689F2ADEAE28000DDA94 /* TeamsCell.swift in Sources */,
 				1F8957732ACC56FE00C91B9A /* CompetitionsModel.swift in Sources */,
