@@ -6,6 +6,8 @@ let compURL = "https://api.football-data.org/v4/competitions"
 let teamsURL = "http://api.football-data.org/v4/competitions/WC/teams"
 let apiKey = "7e21461aac484b229189d31e2abad0f1"
 let headers : HTTPHeaders = [ "X-Auth-Token": apiKey]
+
+
    
 class APIService{
     // singletone property
