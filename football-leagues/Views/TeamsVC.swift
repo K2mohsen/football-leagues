@@ -20,9 +20,22 @@ class TeamsVC: UIViewController {
         tableView.register(UINib.init(nibName: "TeamsCell", bundle: nil), forCellReuseIdentifier: "TeamsCell")
         
         tableView.dataSource = self
-        //tableView.delegate = self
-
-       
+        tableView.delegate = self
+        
+        teamsVM.successClouser = {
+            self.tableView.reloadData()
+        }
+        teamsVM.errorClouser = { error in
+            self.showError(error)
+        }
+        teamsVM.getTeams()
+    }
+    // create error alert
+    func showError(_ errorMessage : String){
+        let alertController = UIAlertController(title: "error", message: errorMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
 }
 // MARK: - UITableViewDataSource
@@ -61,11 +74,13 @@ extension TeamsVC : UITableViewDataSource {
                             cell.competitionTypeImage.image = UIImage(named: "league_image")
                             cell.competionTypeName.text = "League"
                             
-                            return cell
+                    
                         }
                     }
                 }
+            
             }
+            return cell
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TeamsCell", for: indexPath) as! TeamsCell
@@ -77,10 +92,15 @@ extension TeamsVC : UITableViewDataSource {
                 let svgCoder = SDImageSVGCoder.shared
                 SDImageCodersManager.shared.addCoder(svgCoder)
                 cell.teamImage.sd_setImage(with: teamImage, placeholderImage: UIImage(named: "placeholder"))
-                return cell
+                
             }
-        
+        return cell
         }
-        return UITableViewCell()
+    }
+}
+// MARK: - UITableViewDelegate
+extension TeamsVC : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //navigate to Games screen
     }
 }
