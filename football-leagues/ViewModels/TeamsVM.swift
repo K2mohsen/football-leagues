@@ -3,7 +3,7 @@ import Foundation
 
 class TeamsVM {
     let apiService = APIService.shared
-    var teams : [Team]? = []
+    var teams : [Team] = []
     var successClouser: (() -> ())?
     var errorClouser: ((String) -> ())?
     func getTeams() {

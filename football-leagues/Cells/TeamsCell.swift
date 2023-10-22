@@ -8,10 +8,13 @@
 import UIKit
 
 class TeamsCell: UITableViewCell {
-
+    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var teamImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

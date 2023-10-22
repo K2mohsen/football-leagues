@@ -4,6 +4,7 @@ import Foundation
 struct Teams: Codable {
     let season: Season?
     let teams: [Team]?
+    let competition: Competition?
 }
 // MARK: - Team
 struct Team: Codable {

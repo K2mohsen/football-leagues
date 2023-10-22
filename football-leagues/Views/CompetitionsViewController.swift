@@ -7,7 +7,7 @@ import SDWebImageSVGCoder
 class CompetitionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
      private let competitionsVM = CompetitionsViewModel()
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,6 @@ class CompetitionsViewController: UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
     }
-    
 }
 //MARK: - tableViewDataSource
 extension CompetitionsViewController : UITableViewDataSource {
@@ -76,9 +75,10 @@ extension CompetitionsViewController : UITableViewDataSource {
 //MARK: - tableViewDelegate
 extension CompetitionsViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      //  let competitionId = competitionsVM.competitions[indexPath.row].id
+        let selectedCompetitionId = competitionsVM.competitions[indexPath.row].id
+        let teamsVC = TeamsVC()
+        teamsVC.selectedCompetitionId = selectedCompetitionId
+        
     }
-    
-    
 }
 
