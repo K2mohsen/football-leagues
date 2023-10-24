@@ -11,6 +11,11 @@ class CompetitionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Competitions"
+        let fontSize : CGFloat = 24.0
+        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize:fontSize)]
+        navigationController?.navigationBar.titleTextAttributes = attributes
+        
         let tableViewInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.contentInset = tableViewInsets
         tableView.register(UINib.init(nibName: "CompetitionsTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitionsCell")
@@ -78,7 +83,7 @@ extension CompetitionsViewController : UITableViewDelegate{
         let selectedCompetitionId = competitionsVM.competitions[indexPath.row].id
         let teamsVC = TeamsVC()
         teamsVC.selectedCompetitionId = selectedCompetitionId
-        
+        navigationController?.pushViewController(teamsVC, animated: true)
     }
 }
 

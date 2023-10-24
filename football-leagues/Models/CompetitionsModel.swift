@@ -57,4 +57,5 @@ enum TypeEnum: String, Codable {
 // MARK: - Filters
 struct Filters: Codable {
     let client: String?
+    let season: String?
 }

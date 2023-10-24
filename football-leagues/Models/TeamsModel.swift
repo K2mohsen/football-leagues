@@ -2,6 +2,8 @@
 import Foundation
 
 struct Teams: Codable {
+    let count: Int?
+    let filters: Filters?
     let season: Season?
     let teams: [Team]?
     let competition: Competition?
@@ -19,7 +21,7 @@ struct Team: Codable {
     let runningCompetitions: [Competition]?
     let coach: Coach?
     let squad: [Squad]?
-    let lastUpdated: Date?
+    let lastUpdated: String?
 }
 // MARK: - Coach
 struct Coach: Codable {
@@ -36,7 +38,7 @@ struct Contract: Codable {
 struct Squad: Codable {
     let id: Int?
     let name: String?
-    let position: Position?
+    let position: String?
     let dateOfBirth: String?
     let nationality: String?
 }
@@ -56,7 +58,7 @@ struct Season: Codable {
     let id: Int?
     let startDate, endDate: String?
     let currentMatchday: Int?
-    let winner: Winner?
+//    let winner: Winner?
 }
 // MARK: - Winner
 struct Winner: Codable {
@@ -67,6 +69,6 @@ struct Winner: Codable {
     let website: String?
     let founded: Int?
     let clubColors: String?
-    let lastUpdated: Date?
+    let lastUpdated: String?
 }
 
