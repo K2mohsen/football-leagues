@@ -58,4 +58,6 @@ enum TypeEnum: String, Codable {
 struct Filters: Codable {
     let client: String?
     let season: String?
+    let competitions, permission: String?
+    let limit: Int?
 }

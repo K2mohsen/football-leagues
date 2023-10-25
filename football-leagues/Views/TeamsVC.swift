@@ -74,13 +74,23 @@ extension TeamsVC : UITableViewDataSource {
                 if let competitionName = selectedCompetition.name{
                     cell.competitionNameLabel.text = competitionName
                 }
-                if let areaFlagImage = URL(string: selectedCompetition.area?.flag ?? "Empty_URL_string"){
+                if let areaFlagImage = URL(string: selectedCompetition.emblem ?? "Empty_URL_string"){
                     let svgCoder = SDImageSVGCoder.shared
                     SDImageCodersManager.shared.addCoder(svgCoder)
                     cell.areaFlagImage.sd_setImage(with: areaFlagImage, placeholderImage: UIImage(named: "copa_flag"))
                 }
-                if let areaName = selectedCompetition.area?.name{
-                    cell.areaName.text = areaName
+                if let compCode = selectedCompetition.code{
+                    cell.areaName.text = compCode
+                }
+                if let compType = selectedCompetition.type{
+                    switch compType {
+                    case .cup:
+                        cell.competitionTypeImage.image = UIImage(named: "cup_image")
+                        cell.competionTypeName.text = "cup"
+                    case .league:
+                        cell.competitionTypeImage.image = UIImage(named: "league_image")
+                        cell.competionTypeName.text = "League"
+                    }
                 }
             }
             

@@ -23,6 +23,9 @@
 		1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */; };
 		1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7AA462AC9516B00895E27 /* Assets.xcassets */; };
 		1FA7AA4A2AC9516B00895E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA7AA482AC9516B00895E27 /* LaunchScreen.storyboard */; };
+		1FB383F22AE7E068006790E5 /* MatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB383F02AE7E068006790E5 /* MatchesCell.swift */; };
+		1FB383F32AE7E068006790E5 /* MatchesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB383F12AE7E068006790E5 /* MatchesCell.xib */; };
+		1FB383F52AE90F93006790E5 /* MatchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB383F42AE90F93006790E5 /* MatchesModel.swift */; };
 		1FC4E9222ADFD74800A6846E /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9202ADFD74800A6846E /* TeamsVC.swift */; };
 		1FC4E9232ADFD74800A6846E /* TeamsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC4E9212ADFD74800A6846E /* TeamsVC.xib */; };
 		1FC4E9262ADFEF5700A6846E /* TeamsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */; };
@@ -46,6 +49,9 @@
 		1FA7AA462AC9516B00895E27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA7AA492AC9516B00895E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FA7AA4B2AC9516B00895E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FB383F02AE7E068006790E5 /* MatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCell.swift; sourceTree = "<group>"; };
+		1FB383F12AE7E068006790E5 /* MatchesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesCell.xib; sourceTree = "<group>"; };
+		1FB383F42AE90F93006790E5 /* MatchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesModel.swift; sourceTree = "<group>"; };
 		1FC4E9202ADFD74800A6846E /* TeamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
 		1FC4E9212ADFD74800A6846E /* TeamsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsVC.xib; sourceTree = "<group>"; };
 		1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVM.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 			children = (
 				1F8957722ACC56FE00C91B9A /* CompetitionsModel.swift */,
 				1F99689B2ADE8F3E000DDA94 /* TeamsModel.swift */,
+				1FB383F42AE90F93006790E5 /* MatchesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 				1F89576E2ACC2BBC00C91B9A /* CompetitionsTableViewCell.swift */,
 				1F99689D2ADEAE28000DDA94 /* TeamsCell.swift */,
 				1F99689E2ADEAE28000DDA94 /* TeamsCell.xib */,
+				1FB383F02AE7E068006790E5 /* MatchesCell.swift */,
+				1FB383F12AE7E068006790E5 /* MatchesCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 				1FA7AA472AC9516B00895E27 /* Assets.xcassets in Resources */,
 				1FC4E9232ADFD74800A6846E /* TeamsVC.xib in Resources */,
 				1F89576A2AC98D3700C91B9A /* CompetitionsViewController.xib in Resources */,
+				1FB383F32AE7E068006790E5 /* MatchesCell.xib in Resources */,
 				1F8957712ACC2BBC00C91B9A /* CompetitionsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +306,8 @@
 				1FA7AA452AC9515C00895E27 /* football_leagues.xcdatamodeld in Sources */,
 				1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */,
 				1FC4E9222ADFD74800A6846E /* TeamsVC.swift in Sources */,
+				1FB383F52AE90F93006790E5 /* MatchesModel.swift in Sources */,
+				1FB383F22AE7E068006790E5 /* MatchesCell.swift in Sources */,
 				1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
