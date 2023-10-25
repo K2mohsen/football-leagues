@@ -60,7 +60,6 @@ extension TeamsVC : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompetitionsCell", for: indexPath) as! CompetitionsTableViewCell
@@ -114,7 +113,10 @@ extension TeamsVC : UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension TeamsVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //navigate to Games screen
+        let selectedTeamId = teamsVM.teams[indexPath.row].id
+        let matchesVC = MatchesVC()
+        matchesVC.selectedTeamId = selectedTeamId
+        navigationController?.pushViewController(matchesVC, animated: true)
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             if section == 0 {
