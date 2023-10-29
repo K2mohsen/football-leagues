@@ -21,6 +21,7 @@ class TeamsVC: UIViewController {
         
         let tableViewInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         tableView.contentInset = tableViewInsets
+        
         tableView.register(UINib.init(nibName: "CompetitionsTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitionsCell")
         
         tableView.register(UINib.init(nibName: "TeamsCell", bundle: nil), forCellReuseIdentifier: "TeamsCell")
@@ -115,6 +116,7 @@ extension TeamsVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTeamId = teamsVM.teams[indexPath.row].id
         let matchesVC = MatchesVC()
+        matchesVC.selectedTeam = teamsVM.teams[indexPath.row]
         matchesVC.selectedTeamId = selectedTeamId
         navigationController?.pushViewController(matchesVC, animated: true)
     }

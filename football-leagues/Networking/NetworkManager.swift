@@ -40,7 +40,7 @@ class APIService{
         }
     }
     func fetchMatches(teamId : Int, completion : @escaping (Matches?, String?) -> Void){
-        let URL = "http://api.football-data.org/v4/teams/\(teamId)/matches"
+        let URL = "https://api.football-data.org/v4/teams/\(teamId)/matches"
         let request = AF.request(URL, method: .get, headers: headers)
         request.responseDecodable(of: Matches.self) { response in
             switch response.result {

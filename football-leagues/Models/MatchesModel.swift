@@ -16,8 +16,7 @@ struct Match: Codable {
     let utcDate: String?
     let status: Status?
     let matchday: Int?
-    let stage: Stage?
-    let lastUpdated: String?
+//    let stage: Stage?
     let homeTeam, awayTeam: Team?
     let score: Score?
     let referees: [Referee]?
@@ -27,12 +26,14 @@ struct Referee: Codable {
     let id: Int?
     let name, type, nationality: String?
 }
+
 // MARK: - Score
 struct Score: Codable {
     let winner: String?
     let duration: Duration?
     let fullTime, halfTime: Time?
 }
+
 enum Duration: String, Codable {
     case regular = "REGULAR"
 }
@@ -50,10 +51,11 @@ enum Status: String, Codable {
     case scheduled = "SCHEDULED"
     case timed = "TIMED"
 }
+
 // MARK: - ResultSet
 struct ResultSet: Codable {
     let count: Int?
-    let competitions: Competitions?
+    let competitions: String?
     let first, last: String?
     let played, wins, draws, losses: Int?
 }

@@ -6,7 +6,6 @@ import Foundation
 class MatchesVM {
     let apiService = APIService.shared
     var matches : [Match] = []
-    var hometeamObj : Teams?
     var successClouser: (() -> ())?
     var errorClouser: ((String) -> ())?
     func getMatches(teamId: Int) {
