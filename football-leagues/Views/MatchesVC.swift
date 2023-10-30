@@ -2,6 +2,7 @@
 import UIKit
 import SDWebImageSVGCoder
 
+
 class MatchesVC: UIViewController {
     
     @IBOutlet weak var matchesTable: UITableView!
@@ -91,17 +92,17 @@ extension MatchesVC : UITableViewDataSource {
                       let score = "\(homeScore) : \(awayScore)"
                       cell.scoreLabel.text = score
                       cell.statusLabel.text = "Finished"
-                      let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "dd MMM yyyy")
+                      let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "yyyy-MM-dd HH:mm")
                       cell.matchDateLabel.text = matchDate
                   }
                     
                 case .scheduled :
                     cell.statusLabel.text = "scheduled"
                     cell.matchDateLabel.text = ""
-                    let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "dd MMM yyyy")
+                    let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "yyyy-MM-dd HH:mm")
                     cell.scoreLabel.text = matchDate
                 case .timed:
-                    let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "dd MMM yyyy")
+                    let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "yyyy-MM-dd HH:mm")
                     cell.statusLabel.text = "timed"
                     cell.matchDateLabel.text = ""
                     cell.scoreLabel.text = matchDate
