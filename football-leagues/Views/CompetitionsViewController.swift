@@ -2,9 +2,11 @@
 import UIKit
 import SDWebImage
 import SDWebImageSVGCoder
+import SQLite
 
 
 class CompetitionsViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
      private let competitionsVM = CompetitionsViewModel()
      

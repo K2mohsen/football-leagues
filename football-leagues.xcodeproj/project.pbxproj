@@ -153,7 +153,6 @@
 		1FA7AA392AC9515C00895E27 /* football-leagues */ = {
 			isa = PBXGroup;
 			children = (
-				1FB383FD2AEFAEB0006790E5 /* helpers */,
 				1FA7AA3A2AC9515C00895E27 /* AppDelegate.swift */,
 				1FA7AA3C2AC9515C00895E27 /* SceneDelegate.swift */,
 				1F7BFC1D2AD2BF8C009BC842 /* Networking */,
@@ -167,13 +166,6 @@
 				1FA7AA432AC9515C00895E27 /* football_leagues.xcdatamodeld */,
 			);
 			path = "football-leagues";
-			sourceTree = "<group>";
-		};
-		1FB383FD2AEFAEB0006790E5 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = helpers;
 			sourceTree = "<group>";
 		};
 		2E13B7BB7BCC0ED7840031B5 /* Frameworks */ = {

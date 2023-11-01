@@ -9,5 +9,6 @@ target 'football-leagues' do
 pod 'Alamofire'
 pod 'SDWebImage', '~> 5.0'
 pod 'SDWebImageSVGCoder'
+pod 'SQLite.swift', '~> 0.14.0'
 
 end

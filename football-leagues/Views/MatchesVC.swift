@@ -106,6 +106,11 @@ extension MatchesVC : UITableViewDataSource {
                     cell.statusLabel.text = "timed"
                     cell.matchDateLabel.text = ""
                     cell.scoreLabel.text = matchDate
+                case .postponed:
+                    let matchDate = matches.utcDate?.updateDateFormate(from: "yyyy-MM-dd'T'HH:mm:ssZZZ", to: "yyyy-MM-dd HH:mm")
+                    cell.statusLabel.text = "timed"
+                    cell.matchDateLabel.text = ""
+                    cell.scoreLabel.text = matchDate
                 }
                 
             }
