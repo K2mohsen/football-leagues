@@ -12,7 +12,7 @@ let headers : HTTPHeaders = [ "X-Auth-Token": apiKey]
    
 class APIService{
     // singletone property
-    static let shared = APIService()
+    static let shared = APIService()		
     // private initializer
     private init () {}
     

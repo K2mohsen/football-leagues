@@ -66,15 +66,12 @@ extension CompetitionsViewController : UITableViewDataSource {
         if let areaName = competition.area?.name{
             cell.areaName.text = areaName
         }
-        if let compType = competition.type{
-            switch compType {
-            case .cup:
+        if competition.type != nil{
                 cell.competitionTypeImage.image = UIImage(named: "cup_image")
                 cell.competionTypeName.text = "cup"
-            case .league:
                 cell.competitionTypeImage.image = UIImage(named: "league_image")
                 cell.competionTypeName.text = "League"
-            }
+            
         }
         return cell
     }

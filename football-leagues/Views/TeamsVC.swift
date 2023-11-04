@@ -82,15 +82,11 @@ extension TeamsVC : UITableViewDataSource {
                 if let compCode = selectedCompetition.code{
                     cell.areaName.text = compCode
                 }
-                if let compType = selectedCompetition.type{
-                    switch compType {
-                    case .cup:
+                if selectedCompetition.type != nil{
                         cell.competitionTypeImage.image = UIImage(named: "cup_image")
                         cell.competionTypeName.text = "cup"
-                    case .league:
                         cell.competitionTypeImage.image = UIImage(named: "league_image")
                         cell.competionTypeName.text = "League"
-                    }
                 }
             }
             

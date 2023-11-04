@@ -12,19 +12,10 @@ struct Competitions: Codable {
 struct Competition: Codable {
     let id: Int?
     let area: Area?
-    let name, code: String?
-    let type: TypeEnum?
+    let name: String?
+    let type: String?
     let emblem: String?
-    let plan: Plan?
-    let currentSeason: CurrentSeason?
-    let numberOfAvailableSeasons: Int?
-    let lastUpdated: String?
-}
-enum Code: String, Codable {
-    case ecq = "ECQ"
-    case qafc = "QAFC"
-    case qcbl = "QCBL"
-    case wc = "WC"
+    let code : String?
 }
 enum Name: String, Codable {
     case europeanChampionshipQualifiers = "European Championship Qualifiers"
@@ -37,6 +28,24 @@ struct Area: Codable {
     let id: Int?
     let name, code: String?
     let flag: String?
+    
+    func encodeArea() -> String {
+        var encodedString = ""
+        if let jsonData = try? JSONEncoder().encode(self),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            encodedString = jsonString
+        }
+        return encodedString
+    }
+    
+    static func decode(from areaJSON: String) -> Area? {
+        var area: Area?
+        if let jsonData = areaJSON.data(using: .utf8),
+           let decodedArea = try? JSONDecoder().decode(Area.self, from: jsonData) {
+            area = decodedArea
+        }
+        return area
+    }
 }
 
 // MARK: - CurrentSeason
