@@ -17,11 +17,11 @@ class DBManager {
     private let type = Expression<String?>("type")
     private let code = Expression<String?>("code")
     
-     private init () {
+    private init () {
         do {
-          let dbPath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("competitions.sqlite").path
+            let dbPath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("competitions.sqlite").path
             
-             db = try Connection(dbPath)
+            db = try Connection(dbPath)
             try db?.run(competitionsTable.create {table in
                 table.column(id, primaryKey: true)
                 table.column(name)
@@ -36,19 +36,32 @@ class DBManager {
         }
     }
     func insert(competition: Competition) {
-            do {
-                let insert = competitionsTable.insert(
-                    name <- competition.name,
-                    emblem <- competition.emblem,
-                    area <- competition.area?.encodeArea(),
-                    type <- competition.type,
-                    type <- competition.code
-                )
-                try db?.run(insert)
-            } catch {
-                print("Insertion failed: \(error)")
-            }
+        do {
+            let insert = competitionsTable.insert(
+                name <- competition.name,
+                emblem <- competition.emblem,
+                area <- competition.area?.encodeArea(),
+                type <- competition.type,
+                type <- competition.code
+            )
+            try db?.run(insert)
+        } catch {
+            print("Insertion failed: \(error)")
         }
+    }
+    func saveToDatabase(competitions : [Competition]) {
+        competitions.forEach { Competition in
+            insert(competition: Competition)
+        }
+    }
+    func deleteAllCompetitions(){
+        do {
+        let deleteCompetitions = competitionsTable.delete()
+        try db?.run(deleteCompetitions)
+        }catch{
+            print("failed delete competitions\(error)")
+        }
+    }
     func fetchCompetitionsFromDatabase () -> [Competition] {
         var competitions : [Competition] = []
         do {
@@ -65,11 +78,11 @@ class DBManager {
                     competitions.append(competition)
                 }
             }
-            }catch {
-                print("fetch Faild \(error)")
-                }
-        return competitions
-            }
+        }catch {
+            print("fetch Faild \(error)")
         }
-   
+        return competitions
+    }
+}
+
 

@@ -7,13 +7,13 @@ import SQLite
 class CompetitionsViewModel{
     
     let apiService = APIService.shared
-    let competitionsFromDB = DBManager.shared.fetchCompetitionsFromDatabase()
     var competitions : [Competition] = []
     var successClouser: (() -> ())?
     var errorClouser: ((String) -> ())?
     
     
     func getcompetitions(){
+        let competitionsFromDB = DBManager.shared.fetchCompetitionsFromDatabase()
         if !competitionsFromDB.isEmpty {
             self.competitions = competitionsFromDB
             self.successClouser?()
@@ -23,13 +23,15 @@ class CompetitionsViewModel{
                     //fire error closure
                     self.errorClouser?(error)
                 }else{
+                    //save competitions locale
+                    DBManager.shared.deleteAllCompetitions()
+                    DBManager.shared.saveToDatabase(competitions: competitions ?? [])
                     self.competitions = competitions ?? []
                     // fire sucess closure
                     self.successClouser?()
                 }
             }
         }
-       
     }
 }
 
