@@ -3,15 +3,19 @@ import UIKit
 import SDWebImage
 import SDWebImageSVGCoder
 import SQLite
+import ShimmerSwift
 
 
 class CompetitionsViewController: UIViewController {
-    
+    @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var tableView: UITableView!
-     private let competitionsVM = CompetitionsViewModel()
-     
+    
+    @IBOutlet weak var emptyStateLabel: UILabel!
+    private let competitionsVM = CompetitionsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyStateView.isHidden = true
         
         self.title = "Competitions"
         let fontSize : CGFloat = 24.0
@@ -25,20 +29,67 @@ class CompetitionsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        competitionsVM.successClouser = {
-            self.tableView.reloadData()
-        }
-        competitionsVM.errorClouser = { error in
-            self.showError(error)
+        //        competitionsVM.successClouser = {
+        //            self.tableView.reloadData()
+        //        }
+        //        competitionsVM.errorClouser = { error in
+        //            self.showError(error)
+        //        }
+        //        competitionsVM.getcompetitions()
+        //    }
+        competitionsVM.stateClouser = { State in
+            switch State {
+            case .success :
+                self.competitionsVM.successClouser = {
+                    self.tableView.reloadData()
+                    self.stopShimmeringEffect()
+                }
+            case .error :
+                self.competitionsVM.errorClouser = { error in
+                    self.showError(error)
+                }
+            case .loading :
+                self.addShimmeringEffect()
+            case .empty :
+                self.updateEmptyState()
+            }
         }
         competitionsVM.getcompetitions()
     }
-    // create error alert
-    func showError(_ errorMessage : String){
+    func showError(_ errorMessage : String) {
         let alertController = UIAlertController(title: "error", message: errorMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
+    }
+    func addShimmeringEffect () {
+        for cell in tableView.visibleCells {
+            if let competitionsCell = cell as? CompetitionsTableViewCell {
+                let shimmeringView = ShimmeringView(frame: competitionsCell.contentView.bounds)
+                competitionsCell.contentView.addSubview(shimmeringView)
+                shimmeringView.isShimmering = true
+            }
+        }
+    }
+    func stopShimmeringEffect() {
+        for cell in tableView.visibleCells {
+            if let competitionsCell = cell as? CompetitionsTableViewCell,
+               let shimmeringView = competitionsCell.contentView.subviews.first as? ShimmeringView {
+                shimmeringView.isShimmering = false
+                shimmeringView.removeFromSuperview()
+            }
+        }
+    }
+    
+    func updateEmptyState () {
+        if competitionsVM.competitions.isEmpty {
+            emptyStateView.isHidden = false
+            emptyStateLabel.text = "Empty Table"
+        }else{
+            emptyStateView.isHidden = true
+            emptyStateLabel.text = ""
+        }
+    
     }
 }
 //MARK: - tableViewDataSource
@@ -67,10 +118,10 @@ extension CompetitionsViewController : UITableViewDataSource {
             cell.areaName.text = areaName
         }
         if competition.type != nil{
-                cell.competitionTypeImage.image = UIImage(named: "cup_image")
-                cell.competionTypeName.text = "cup"
-                cell.competitionTypeImage.image = UIImage(named: "league_image")
-                cell.competionTypeName.text = "League"
+            cell.competitionTypeImage.image = UIImage(named: "cup_image")
+            cell.competionTypeName.text = "cup"
+            cell.competitionTypeImage.image = UIImage(named: "league_image")
+            cell.competionTypeName.text = "League"
             
         }
         return cell

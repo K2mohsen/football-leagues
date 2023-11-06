@@ -30,6 +30,7 @@
 		1FB383FA2AE91F15006790E5 /* MatchesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB383F82AE91F15006790E5 /* MatchesVC.xib */; };
 		1FB383FC2AE9343C006790E5 /* MatchesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB383FB2AE9343C006790E5 /* MatchesVM.swift */; };
 		1FB384022AF258B6006790E5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB384012AF258B6006790E5 /* DBManager.swift */; };
+		1FBD9B422AF8F4FC00C4AC76 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD9B412AF8F4FC00C4AC76 /* States.swift */; };
 		1FC4E9222ADFD74800A6846E /* TeamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9202ADFD74800A6846E /* TeamsVC.swift */; };
 		1FC4E9232ADFD74800A6846E /* TeamsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FC4E9212ADFD74800A6846E /* TeamsVC.xib */; };
 		1FC4E9262ADFEF5700A6846E /* TeamsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */; };
@@ -60,6 +61,7 @@
 		1FB383F82AE91F15006790E5 /* MatchesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchesVC.xib; sourceTree = "<group>"; };
 		1FB383FB2AE9343C006790E5 /* MatchesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesVM.swift; sourceTree = "<group>"; };
 		1FB384012AF258B6006790E5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		1FBD9B412AF8F4FC00C4AC76 /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		1FC4E9202ADFD74800A6846E /* TeamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVC.swift; sourceTree = "<group>"; };
 		1FC4E9212ADFD74800A6846E /* TeamsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamsVC.xib; sourceTree = "<group>"; };
 		1FC4E9252ADFEF5700A6846E /* TeamsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsVM.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1FB384012AF258B6006790E5 /* DBManager.swift */,
+				1FBD9B412AF8F4FC00C4AC76 /* States.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				1FA7AA3B2AC9515C00895E27 /* AppDelegate.swift in Sources */,
 				1FC4E9222ADFD74800A6846E /* TeamsVC.swift in Sources */,
 				1FB383F52AE90F93006790E5 /* MatchesModel.swift in Sources */,
+				1FBD9B422AF8F4FC00C4AC76 /* States.swift in Sources */,
 				1FB383F22AE7E068006790E5 /* MatchesCell.swift in Sources */,
 				1FA7AA3D2AC9515C00895E27 /* SceneDelegate.swift in Sources */,
 			);

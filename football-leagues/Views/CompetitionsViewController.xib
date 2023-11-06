@@ -4,11 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompetitionsViewController" customModule="football_leagues" customModuleProvider="target">
             <connections>
+                <outlet property="emptyStateView" destination="9aO-NF-lBs" id="8yc-hS-QnZ"/>
                 <outlet property="tableView" destination="YPk-Jf-WtH" id="g8W-a9-tQn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,16 +25,47 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="cHW-KK-Nct"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ge4-ds-YpI"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aO-NF-lBs">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsb-vd-iOY">
+                            <rect key="frame" x="65" y="438" width="260" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fsb-vd-iOY" secondAttribute="trailing" constant="89" id="JXm-zs-kAr"/>
+                        <constraint firstItem="fsb-vd-iOY" firstAttribute="centerY" secondItem="9aO-NF-lBs" secondAttribute="centerY" id="h7Q-8a-kH1"/>
+                        <constraint firstItem="fsb-vd-iOY" firstAttribute="leading" secondItem="9aO-NF-lBs" secondAttribute="leading" constant="65" id="zOL-YX-lbb"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="9aO-NF-lBs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3sH-02-vWB"/>
+                <constraint firstAttribute="trailing" secondItem="9aO-NF-lBs" secondAttribute="trailing" id="Guh-F3-eYb"/>
                 <constraint firstItem="YPk-Jf-WtH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ib7-FB-v8P"/>
+                <constraint firstItem="9aO-NF-lBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cEM-2e-cQf"/>
                 <constraint firstAttribute="trailing" secondItem="YPk-Jf-WtH" secondAttribute="trailing" id="jYh-sm-VU1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YPk-Jf-WtH" secondAttribute="bottom" id="oMS-NB-6k7"/>
                 <constraint firstItem="YPk-Jf-WtH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rva-vI-kTU"/>
+                <constraint firstAttribute="bottom" secondItem="9aO-NF-lBs" secondAttribute="bottom" id="zbY-pR-qCg"/>
             </constraints>
-            <point key="canvasLocation" x="-90" y="93"/>
+            <point key="canvasLocation" x="-91.304347826086968" y="92.410714285714278"/>
         </view>
+        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="jMM-Z9-8OH">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-504" y="36"/>
+        </activityIndicatorView>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -10,25 +10,36 @@ class CompetitionsViewModel{
     var competitions : [Competition] = []
     var successClouser: (() -> ())?
     var errorClouser: ((String) -> ())?
-    
-    
+    var stateClouser : ((State) -> ())?
+    var state : State? {
+        didSet {
+            self.stateClouser?(state!)
+        }
+    }
     func getcompetitions(){
+        self.state = .loading
+
         let competitionsFromDB = DBManager.shared.fetchCompetitionsFromDatabase()
+        
         if !competitionsFromDB.isEmpty {
             self.competitions = competitionsFromDB
-            self.successClouser?()
+            self.state = .success
         }else{
             apiService.fetchCompetitions { competitions, error in
                 if let error = error {
-                    //fire error closure
-                    self.errorClouser?(error)
+                    self.state = .error
+                    print(error)
                 }else{
                     //save competitions locale
-                    DBManager.shared.deleteAllCompetitions()
-                    DBManager.shared.saveToDatabase(competitions: competitions ?? [])
-                    self.competitions = competitions ?? []
-                    // fire sucess closure
-                    self.successClouser?()
+                    if let competitions = competitions, !competitions.isEmpty {
+                        DBManager.shared.deleteAllCompetitions()
+                        DBManager.shared.saveToDatabase(competitions: competitions)
+                        self.competitions = competitions
+                        self.state = .success
+                    }else {
+                        self.state = .empty
+                    }
+                    
                 }
             }
         }
