@@ -10,8 +10,15 @@ class MatchesVC: UIViewController {
     private let matchesVM = MatchesVM()
     var matches : [Match] = []
     var selectedTeam: Team?
+    
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator.center = matchesTable.center
+        loadingIndicator.color = .gray
+        loadingIndicator.hidesWhenStopped = true
+        view.addSubview(loadingIndicator)
         
         self.title = "Matches"
         let fontSize : CGFloat = 24.0

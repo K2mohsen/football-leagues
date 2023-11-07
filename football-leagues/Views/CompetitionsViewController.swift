@@ -3,19 +3,26 @@ import UIKit
 import SDWebImage
 import SDWebImageSVGCoder
 import SQLite
-import ShimmerSwift
+import Shimmer
 
 
 class CompetitionsViewController: UIViewController {
     @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var emptyStateLabel: UILabel!
     private let competitionsVM = CompetitionsViewModel()
+    
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyStateView.isHidden = true
+        
+        loadingIndicator.center = tableView.center
+        loadingIndicator.color = .gray
+        loadingIndicator.hidesWhenStopped = true
+        view.addSubview(loadingIndicator)
+        
+        //emptyStateView.isHidden = true
         
         self.title = "Competitions"
         let fontSize : CGFloat = 24.0
@@ -26,34 +33,28 @@ class CompetitionsViewController: UIViewController {
         tableView.contentInset = tableViewInsets
         tableView.register(UINib.init(nibName: "CompetitionsTableViewCell", bundle: nil), forCellReuseIdentifier: "CompetitionsCell")
         
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        //        competitionsVM.successClouser = {
-        //            self.tableView.reloadData()
-        //        }
-        //        competitionsVM.errorClouser = { error in
-        //            self.showError(error)
-        //        }
-        //        competitionsVM.getcompetitions()
-        //    }
+
         competitionsVM.stateClouser = { State in
             switch State {
             case .success :
-                self.competitionsVM.successClouser = {
-                    self.tableView.reloadData()
-                    self.stopShimmeringEffect()
-                }
+                self.tableView.reloadData()
+                self.hideEmptyState()
+                self.loadingIndicator.stopAnimating()
             case .error :
-                self.competitionsVM.errorClouser = { error in
-                    self.showError(error)
-                }
+                self.showError(self.competitionsVM.errorMsg ?? "")
+                self.loadingIndicator.stopAnimating()
             case .loading :
-                self.addShimmeringEffect()
+                self.loadingIndicator.startAnimating()
+                print("is loading")
             case .empty :
-                self.updateEmptyState()
+                self.showEmptyState()
+                self.loadingIndicator.stopAnimating()
             }
         }
+        
         competitionsVM.getcompetitions()
     }
     func showError(_ errorMessage : String) {
@@ -62,34 +63,13 @@ class CompetitionsViewController: UIViewController {
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
     }
-    func addShimmeringEffect () {
-        for cell in tableView.visibleCells {
-            if let competitionsCell = cell as? CompetitionsTableViewCell {
-                let shimmeringView = ShimmeringView(frame: competitionsCell.contentView.bounds)
-                competitionsCell.contentView.addSubview(shimmeringView)
-                shimmeringView.isShimmering = true
-            }
-        }
-    }
-    func stopShimmeringEffect() {
-        for cell in tableView.visibleCells {
-            if let competitionsCell = cell as? CompetitionsTableViewCell,
-               let shimmeringView = competitionsCell.contentView.subviews.first as? ShimmeringView {
-                shimmeringView.isShimmering = false
-                shimmeringView.removeFromSuperview()
-            }
-        }
+    
+    func showEmptyState () {
+        emptyStateView.isHidden = false
     }
     
-    func updateEmptyState () {
-        if competitionsVM.competitions.isEmpty {
-            emptyStateView.isHidden = false
-            emptyStateLabel.text = "Empty Table"
-        }else{
-            emptyStateView.isHidden = true
-            emptyStateLabel.text = ""
-        }
-    
+    func hideEmptyState () {
+        emptyStateView.isHidden = true
     }
 }
 //MARK: - tableViewDataSource

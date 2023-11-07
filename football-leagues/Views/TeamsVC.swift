@@ -9,10 +9,14 @@ class TeamsVC: UIViewController {
     private let teamsVM = TeamsVM()
     var selectedCompetitionId : Int?
     var teams : [Team] = []
-    
-    
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadingIndicator.center = tableView.center
+        loadingIndicator.color = .gray
+        loadingIndicator.hidesWhenStopped = true
+        view.addSubview(loadingIndicator)
         
         self.title = "Teams"
         let fontSize : CGFloat = 24.0

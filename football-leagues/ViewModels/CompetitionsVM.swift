@@ -8,8 +8,7 @@ class CompetitionsViewModel{
     
     let apiService = APIService.shared
     var competitions : [Competition] = []
-    var successClouser: (() -> ())?
-    var errorClouser: ((String) -> ())?
+    var errorMsg: String?
     var stateClouser : ((State) -> ())?
     var state : State? {
         didSet {
@@ -27,6 +26,7 @@ class CompetitionsViewModel{
         }else{
             apiService.fetchCompetitions { competitions, error in
                 if let error = error {
+                    self.errorMsg = error
                     self.state = .error
                     print(error)
                 }else{
