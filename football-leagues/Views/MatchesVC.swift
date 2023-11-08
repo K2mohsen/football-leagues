@@ -32,13 +32,24 @@ class MatchesVC: UIViewController {
         matchesTable.register(UINib.init(nibName: "MatchesCell", bundle: nil), forCellReuseIdentifier: "MatchesCell")
         
         matchesTable.dataSource = self
+        matchesTable.delegate = self
         
-        matchesVM.successClouser = {
-            self.matchesTable.reloadData()
-        }
-        matchesVM.errorClouser = { error in
-            self.showError(error)
-        }
+        matchesVM.stateClouser = { State in
+           switch State {
+           case .success :
+               self.matchesTable.reloadData()
+               self.loadingIndicator.stopAnimating()
+           case .error :
+               self.showError(self.matchesVM.errorMsg ?? "")
+               self.loadingIndicator.stopAnimating()
+           case .loading :
+               self.loadingIndicator.startAnimating()
+               print("is loading")
+           case .empty :
+               self.loadingIndicator.stopAnimating()
+           }
+       }
+
         if let selectedTeamId = selectedTeamId {
             matchesVM.getMatches(teamId: selectedTeamId)
         }

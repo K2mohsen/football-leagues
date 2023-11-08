@@ -33,18 +33,26 @@ class TeamsVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        teamsVM.successClouser = {
-            self.tableView.reloadData()
+         teamsVM.stateClouser = { State in
+            switch State {
+            case .success :
+                self.tableView.reloadData()
+                self.loadingIndicator.stopAnimating()
+            case .error :
+                self.showError(self.teamsVM.errorMsg ?? "")
+                self.loadingIndicator.stopAnimating()
+            case .loading :
+                self.loadingIndicator.startAnimating()
+                print("is loading")
+            case .empty :
+                self.loadingIndicator.stopAnimating()
+            }
         }
-        teamsVM.errorClouser = { error in
-            self.showError(error)
-        }
-       // competitionsVM.getcompetitions()
+        
         if let selectedCompetitionId = selectedCompetitionId {
             teamsVM.getTeams(competitionId: selectedCompetitionId)
         }
     }
-    
     // create error alert
     func showError(_ errorMessage : String){
         let alertController = UIAlertController(title: "error", message: errorMessage, preferredStyle: .alert)

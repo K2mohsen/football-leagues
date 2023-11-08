@@ -17,9 +17,7 @@ class CompetitionsViewModel{
     }
     func getcompetitions(){
         self.state = .loading
-
         let competitionsFromDB = DBManager.shared.fetchCompetitionsFromDatabase()
-        
         if !competitionsFromDB.isEmpty {
             self.competitions = competitionsFromDB
             self.state = .success

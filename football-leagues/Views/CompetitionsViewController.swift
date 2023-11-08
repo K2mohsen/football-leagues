@@ -22,7 +22,7 @@ class CompetitionsViewController: UIViewController {
         loadingIndicator.hidesWhenStopped = true
         view.addSubview(loadingIndicator)
         
-        //emptyStateView.isHidden = true
+        emptyStateView.isHidden = true
         
         self.title = "Competitions"
         let fontSize : CGFloat = 24.0
