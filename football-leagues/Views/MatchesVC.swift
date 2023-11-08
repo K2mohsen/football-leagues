@@ -138,7 +138,6 @@ extension MatchesVC : UITableViewDataSource {
     }
 }
 extension MatchesVC : UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             if section == 0 {
                 return ""
